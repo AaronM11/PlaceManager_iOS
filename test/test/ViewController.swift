@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Place Manager
+//  test
 //
 //  Created by Aaron Musengo on 4/10/18.
 //  Copyright © 2018 Aaron Musengo. All rights reserved.

@@ -7,128 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A444515C207DB4AD009B8E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444515B207DB4AD009B8E02 /* AppDelegate.swift */; };
-		A4445161207DB4AD009B8E02 /* PlaceTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A444515F207DB4AD009B8E02 /* PlaceTableView.storyboard */; };
-		A4445163207DB4AD009B8E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4445162207DB4AD009B8E02 /* Assets.xcassets */; };
-		A4445166207DB4AD009B8E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4445164207DB4AD009B8E02 /* LaunchScreen.storyboard */; };
-		A444516E207DB703009B8E02 /* PlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444516D207DB703009B8E02 /* PlaceTableViewController.swift */; };
-		A4445171207DB742009B8E02 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445170207DB742009B8E02 /* Place.swift */; };
-		A4445174207DB9A9009B8E02 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4445173207DB9A9009B8E02 /* libsqlite3.tbd */; };
-		A4445177207DBA62009B8E02 /* PlaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4445175207DBA62009B8E02 /* PlaceModel.xcdatamodeld */; };
-		A4DBC160208BF28200E2FF73 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBC15F208BF28200E2FF73 /* Places.swift */; };
+		A4445185207DBAB1009B8E02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445184207DBAB1009B8E02 /* AppDelegate.swift */; };
+		A4445187207DBAB1009B8E02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445186207DBAB1009B8E02 /* ViewController.swift */; };
+		A444518A207DBAB1009B8E02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4445188207DBAB1009B8E02 /* Main.storyboard */; };
+		A444518D207DBAB1009B8E02 /* test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A444518B207DBAB1009B8E02 /* test.xcdatamodeld */; };
+		A444518F207DBAB1009B8E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A444518E207DBAB1009B8E02 /* Assets.xcassets */; };
+		A4445192207DBAB1009B8E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4445190207DBAB1009B8E02 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A4445158207DB4AD009B8E02 /* Place Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Place Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A444515B207DB4AD009B8E02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A4445160207DB4AD009B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PlaceTableView.storyboard; sourceTree = "<group>"; };
-		A4445162207DB4AD009B8E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A4445165207DB4AD009B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A4445167207DB4AD009B8E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A444516D207DB703009B8E02 /* PlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewController.swift; sourceTree = "<group>"; };
-		A4445170207DB742009B8E02 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		A4445173207DB9A9009B8E02 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		A4445176207DBA62009B8E02 /* PlaceModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaceModel.xcdatamodel; sourceTree = "<group>"; };
-		A4DBC15F208BF28200E2FF73 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		A4445181207DBAB1009B8E02 /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4445184207DBAB1009B8E02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A4445186207DBAB1009B8E02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4445189207DBAB1009B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A444518C207DBAB1009B8E02 /* test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test.xcdatamodel; sourceTree = "<group>"; };
+		A444518E207DBAB1009B8E02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A4445191207DBAB1009B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A4445193207DBAB1009B8E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A4445155207DB4AD009B8E02 /* Frameworks */ = {
+		A444517E207DBAB1009B8E02 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4445174207DB9A9009B8E02 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A444514F207DB4AD009B8E02 = {
+		A4445178207DBAB1009B8E02 = {
 			isa = PBXGroup;
 			children = (
-				A444515A207DB4AD009B8E02 /* Place Manager */,
-				A4445159207DB4AD009B8E02 /* Products */,
-				A4445175207DBA62009B8E02 /* PlaceModel.xcdatamodeld */,
-				A4445172207DB9A9009B8E02 /* Frameworks */,
+				A4445183207DBAB1009B8E02 /* test */,
+				A4445182207DBAB1009B8E02 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A4445159207DB4AD009B8E02 /* Products */ = {
+		A4445182207DBAB1009B8E02 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4445158207DB4AD009B8E02 /* Place Manager.app */,
+				A4445181207DBAB1009B8E02 /* test.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A444515A207DB4AD009B8E02 /* Place Manager */ = {
+		A4445183207DBAB1009B8E02 /* test */ = {
 			isa = PBXGroup;
 			children = (
-				A444516F207DB733009B8E02 /* Data */,
-				A444515B207DB4AD009B8E02 /* AppDelegate.swift */,
-				A444516D207DB703009B8E02 /* PlaceTableViewController.swift */,
-				A444515F207DB4AD009B8E02 /* PlaceTableView.storyboard */,
-				A4445162207DB4AD009B8E02 /* Assets.xcassets */,
-				A4445164207DB4AD009B8E02 /* LaunchScreen.storyboard */,
-				A4445167207DB4AD009B8E02 /* Info.plist */,
+				A4445184207DBAB1009B8E02 /* AppDelegate.swift */,
+				A4445186207DBAB1009B8E02 /* ViewController.swift */,
+				A4445188207DBAB1009B8E02 /* Main.storyboard */,
+				A444518E207DBAB1009B8E02 /* Assets.xcassets */,
+				A4445190207DBAB1009B8E02 /* LaunchScreen.storyboard */,
+				A4445193207DBAB1009B8E02 /* Info.plist */,
+				A444518B207DBAB1009B8E02 /* test.xcdatamodeld */,
 			);
-			path = "Place Manager";
-			sourceTree = "<group>";
-		};
-		A444516F207DB733009B8E02 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				A4445170207DB742009B8E02 /* Place.swift */,
-				A4DBC15F208BF28200E2FF73 /* Places.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		A4445172207DB9A9009B8E02 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A4445173207DB9A9009B8E02 /* libsqlite3.tbd */,
-			);
-			name = Frameworks;
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A4445157207DB4AD009B8E02 /* Place Manager */ = {
+		A4445180207DBAB1009B8E02 /* test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A444516A207DB4AD009B8E02 /* Build configuration list for PBXNativeTarget "Place Manager" */;
+			buildConfigurationList = A4445196207DBAB1009B8E02 /* Build configuration list for PBXNativeTarget "test" */;
 			buildPhases = (
-				A4445154207DB4AD009B8E02 /* Sources */,
-				A4445155207DB4AD009B8E02 /* Frameworks */,
-				A4445156207DB4AD009B8E02 /* Resources */,
+				A444517D207DBAB1009B8E02 /* Sources */,
+				A444517E207DBAB1009B8E02 /* Frameworks */,
+				A444517F207DBAB1009B8E02 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Place Manager";
-			productName = "Place Manager";
-			productReference = A4445158207DB4AD009B8E02 /* Place Manager.app */;
+			name = test;
+			productName = test;
+			productReference = A4445181207DBAB1009B8E02 /* test.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A4445150207DB4AD009B8E02 /* Project object */ = {
+		A4445179207DBAB1009B8E02 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Aaron Musengo";
 				TargetAttributes = {
-					A4445157207DB4AD009B8E02 = {
+					A4445180207DBAB1009B8E02 = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = A4445153207DB4AD009B8E02 /* Build configuration list for PBXProject "Place Manager" */;
+			buildConfigurationList = A444517C207DBAB1009B8E02 /* Build configuration list for PBXProject "test" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,57 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = A444514F207DB4AD009B8E02;
-			productRefGroup = A4445159207DB4AD009B8E02 /* Products */;
+			mainGroup = A4445178207DBAB1009B8E02;
+			productRefGroup = A4445182207DBAB1009B8E02 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4445157207DB4AD009B8E02 /* Place Manager */,
+				A4445180207DBAB1009B8E02 /* test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A4445156207DB4AD009B8E02 /* Resources */ = {
+		A444517F207DBAB1009B8E02 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4445166207DB4AD009B8E02 /* LaunchScreen.storyboard in Resources */,
-				A4445163207DB4AD009B8E02 /* Assets.xcassets in Resources */,
-				A4445161207DB4AD009B8E02 /* PlaceTableView.storyboard in Resources */,
+				A4445192207DBAB1009B8E02 /* LaunchScreen.storyboard in Resources */,
+				A444518F207DBAB1009B8E02 /* Assets.xcassets in Resources */,
+				A444518A207DBAB1009B8E02 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A4445154207DB4AD009B8E02 /* Sources */ = {
+		A444517D207DBAB1009B8E02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4DBC160208BF28200E2FF73 /* Places.swift in Sources */,
-				A4445171207DB742009B8E02 /* Place.swift in Sources */,
-				A4445177207DBA62009B8E02 /* PlaceModel.xcdatamodeld in Sources */,
-				A444515C207DB4AD009B8E02 /* AppDelegate.swift in Sources */,
-				A444516E207DB703009B8E02 /* PlaceTableViewController.swift in Sources */,
+				A4445187207DBAB1009B8E02 /* ViewController.swift in Sources */,
+				A4445185207DBAB1009B8E02 /* AppDelegate.swift in Sources */,
+				A444518D207DBAB1009B8E02 /* test.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A444515F207DB4AD009B8E02 /* PlaceTableView.storyboard */ = {
+		A4445188207DBAB1009B8E02 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A4445160207DB4AD009B8E02 /* Base */,
+				A4445189207DBAB1009B8E02 /* Base */,
 			);
-			name = PlaceTableView.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A4445164207DB4AD009B8E02 /* LaunchScreen.storyboard */ = {
+		A4445190207DBAB1009B8E02 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A4445165207DB4AD009B8E02 /* Base */,
+				A4445191207DBAB1009B8E02 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -194,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A4445168207DB4AD009B8E02 /* Debug */ = {
+		A4445194207DBAB1009B8E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -254,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		A4445169207DB4AD009B8E02 /* Release */ = {
+		A4445195207DBAB1009B8E02 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -308,36 +280,36 @@
 			};
 			name = Release;
 		};
-		A444516B207DB4AD009B8E02 /* Debug */ = {
+		A4445197207DBAB1009B8E02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YGC7W2QA95;
-				INFOPLIST_FILE = "Place Manager/Info.plist";
+				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adm11.Place-Manager";
+				PRODUCT_BUNDLE_IDENTIFIER = adm11.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		A444516C207DB4AD009B8E02 /* Release */ = {
+		A4445198207DBAB1009B8E02 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YGC7W2QA95;
-				INFOPLIST_FILE = "Place Manager/Info.plist";
+				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "adm11.Place-Manager";
+				PRODUCT_BUNDLE_IDENTIFIER = adm11.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -347,20 +319,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A4445153207DB4AD009B8E02 /* Build configuration list for PBXProject "Place Manager" */ = {
+		A444517C207DBAB1009B8E02 /* Build configuration list for PBXProject "test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4445168207DB4AD009B8E02 /* Debug */,
-				A4445169207DB4AD009B8E02 /* Release */,
+				A4445194207DBAB1009B8E02 /* Debug */,
+				A4445195207DBAB1009B8E02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A444516A207DB4AD009B8E02 /* Build configuration list for PBXNativeTarget "Place Manager" */ = {
+		A4445196207DBAB1009B8E02 /* Build configuration list for PBXNativeTarget "test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A444516B207DB4AD009B8E02 /* Debug */,
-				A444516C207DB4AD009B8E02 /* Release */,
+				A4445197207DBAB1009B8E02 /* Debug */,
+				A4445198207DBAB1009B8E02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -368,17 +340,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A4445175207DBA62009B8E02 /* PlaceModel.xcdatamodeld */ = {
+		A444518B207DBAB1009B8E02 /* test.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A4445176207DBA62009B8E02 /* PlaceModel.xcdatamodel */,
+				A444518C207DBAB1009B8E02 /* test.xcdatamodel */,
 			);
-			currentVersion = A4445176207DBA62009B8E02 /* PlaceModel.xcdatamodel */;
-			path = PlaceModel.xcdatamodeld;
+			currentVersion = A444518C207DBAB1009B8E02 /* test.xcdatamodel */;
+			path = test.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = A4445150207DB4AD009B8E02 /* Project object */;
+	rootObject = A4445179207DBAB1009B8E02 /* Project object */;
 }
