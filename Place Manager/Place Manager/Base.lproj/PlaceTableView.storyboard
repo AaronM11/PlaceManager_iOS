@@ -86,6 +86,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="svf-Xb-EAl"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -112,6 +115,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="nJV-1V-Wfv"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -138,6 +144,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="fLw-Zf-52z"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -164,6 +173,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="fcO-2C-2AD"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -190,6 +202,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="eqX-VL-tkr"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -216,6 +231,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="k7X-4b-6WH"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -242,6 +260,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="0KV-Gv-YGz"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -268,6 +289,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="GU1-Pw-rVw" eventType="editingChanged" id="TgS-Uf-O1J"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -286,9 +310,23 @@
                             <outlet property="delegate" destination="GU1-Pw-rVw" id="tGs-cC-PGd"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="save" id="vuj-7L-sgJ"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Place" id="hMm-TU-Ia9">
                         <barButtonItem key="backBarButtonItem" title="test" id="EUx-Kn-WDy"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cb4-XP-tLf">
+                            <connections>
+                                <segue destination="Ty9-E0-JQe" kind="unwind" unwindAction="unwindToPlaceTableViewWithSegue:" id="4Cq-Wq-erB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jNm-yQ-1QN">
+                            <connections>
+                                <segue destination="Ty9-E0-JQe" kind="unwind" identifier="saveUnwind" unwindAction="unwindToPlaceTableViewWithSegue:" id="9lU-3p-vOX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressStreetTextField" destination="eAg-bz-h73" id="6la-Wz-seS"/>
                         <outlet property="addressTitleTextField" destination="Hpe-dD-f0r" id="V7h-ip-Iwq"/>
@@ -298,9 +336,11 @@
                         <outlet property="latitudeTextField" destination="eD0-up-AUH" id="82X-HG-cjP"/>
                         <outlet property="longitudeTextField" destination="gs4-ZC-nlg" id="T4w-xR-vhc"/>
                         <outlet property="nameTextField" destination="33o-dW-t0x" id="GMi-eN-8hq"/>
+                        <outlet property="saveButton" destination="jNm-yQ-1QN" id="JaY-Og-EA4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6Y-Qf-BoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ty9-E0-JQe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1992.8" y="534.78260869565224"/>
         </scene>

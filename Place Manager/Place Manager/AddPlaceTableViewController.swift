@@ -21,6 +21,10 @@ class AddPlaceTableViewController: UITableViewController {
     @IBOutlet weak var elevationTextField: UITextField!
     @IBOutlet weak var latitudeTextField: UITextField!
     @IBOutlet weak var longitudeTextField: UITextField!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    //MARK: - Constants
+    let saveUnwind = "saveUnwind"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +35,7 @@ class AddPlaceTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         setupTextField(place: place)
+        updateSaveButtonState()
         
     }
 
@@ -51,7 +56,53 @@ class AddPlaceTableViewController: UITableViewController {
         latitudeTextField.text = String(place.latitude)
         longitudeTextField.text = String(place.longitude)
     }
-
+    
+    func updateSaveButtonState() {
+        let name = nameTextField.text ?? ""
+        let addressTitle = addressTitleTextField.text ?? ""
+        let addressStreet = addressStreetTextField.text ?? ""
+        let description = descriptionTextField.text ?? ""
+        let category = categoryTextField.text ?? ""
+        let elevation = elevationTextField.text ?? ""
+        let latitude = latitudeTextField.text ?? ""
+        let longitude = longitudeTextField.text ?? ""
+        saveButton.isEnabled = !name.isEmpty && !addressTitle.isEmpty && !addressStreet.isEmpty && !description.isEmpty && !category.isEmpty && !elevation.isEmpty && !latitude.isEmpty && !longitude.isEmpty
+    
+    }
+    
+    @IBAction func textEditingChanged(_ sender: UITextField) {
+        updateSaveButtonState()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender:
+        Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == saveUnwind else { return }
+        
+        let name = nameTextField.text ?? ""
+        let addressTitle = addressTitleTextField.text ?? ""
+        let addressStreet = addressStreetTextField.text ?? ""
+        let description = descriptionTextField.text ?? ""
+        let category = categoryTextField.text ?? ""
+        guard let elevationString = elevationTextField.text,
+            let latitudeString = latitudeTextField.text ,
+            let longitudeString = longitudeTextField.text else { return }
+        
+        let elevation = Double(elevationString) ?? 0.0
+        let latitude = Double(latitudeString) ?? 0.0
+        let longitude = Double(longitudeString) ?? 0.0
+        
+        place = Place(name: name, description: description, category: category, addressTitle: addressTitle, addressStreet: addressStreet, elevation: elevation, latitude: latitude, longitude: longitude)
+        
+    }
+        
+    
+//    @IBAction func saveNewPlace(_ sender: UIBarButtonItem) {
+//    }
+//
+//    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+//        dismiss(animated: true, completion: nil)
+//    }
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
