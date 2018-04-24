@@ -16,6 +16,7 @@
 		A4445174207DB9A9009B8E02 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4445173207DB9A9009B8E02 /* libsqlite3.tbd */; };
 		A4445177207DBA62009B8E02 /* PlaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4445175207DBA62009B8E02 /* PlaceModel.xcdatamodeld */; };
 		A4DBC160208BF28200E2FF73 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBC15F208BF28200E2FF73 /* Places.swift */; };
+		A4DBC162208C10C200E2FF73 /* AddPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBC161208C10C200E2FF73 /* AddPlaceTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A4445173207DB9A9009B8E02 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A4445176207DBA62009B8E02 /* PlaceModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaceModel.xcdatamodel; sourceTree = "<group>"; };
 		A4DBC15F208BF28200E2FF73 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
+		A4DBC161208C10C200E2FF73 /* AddPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				A444515B207DB4AD009B8E02 /* AppDelegate.swift */,
 				A444516D207DB703009B8E02 /* PlaceTableViewController.swift */,
 				A444515F207DB4AD009B8E02 /* PlaceTableView.storyboard */,
+				A4DBC161208C10C200E2FF73 /* AddPlaceTableViewController.swift */,
 				A4445162207DB4AD009B8E02 /* Assets.xcassets */,
 				A4445164207DB4AD009B8E02 /* LaunchScreen.storyboard */,
 				A4445167207DB4AD009B8E02 /* Info.plist */,
@@ -169,6 +172,7 @@
 				A4445177207DBA62009B8E02 /* PlaceModel.xcdatamodeld in Sources */,
 				A444515C207DB4AD009B8E02 /* AppDelegate.swift in Sources */,
 				A444516E207DB703009B8E02 /* PlaceTableViewController.swift in Sources */,
+				A4DBC162208C10C200E2FF73 /* AddPlaceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

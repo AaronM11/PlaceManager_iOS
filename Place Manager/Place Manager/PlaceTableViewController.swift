@@ -14,7 +14,9 @@ class PlaceTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationItem.leftBarButtonItem = editButtonItem
+//        navigationItem.rightBarButtonItem = plusBarBu
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +55,13 @@ class PlaceTableViewController: UITableViewController {
     }
     */
 
+    override func tableView(_ tableView: UITableView,
+                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
     
+    
+
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -78,14 +86,20 @@ class PlaceTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    let editPlace = "EditPlace"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == editPlace {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+            let addPlaceTableViewController = segue.destination as? AddPlaceTableViewController else { return }
+        
+            let place = places[indexPath.row]
+            addPlaceTableViewController.place = place
+        }
     }
-    */
+ 
 
 }
