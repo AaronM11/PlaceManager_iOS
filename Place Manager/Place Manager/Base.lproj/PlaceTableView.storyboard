@@ -13,7 +13,7 @@
         <scene sceneID="uep-Gp-gSx">
             <objects>
                 <tableViewController id="KB1-Xl-euz" customClass="PlaceTableViewController" customModule="Place_Manager" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0ib-hZ-T5n">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0ib-hZ-T5n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="GU1-Pw-rVw" kind="show" identifier="EditPlace" id="ZOm-HN-kra"/>
+                                    <segue destination="GU1-Pw-rVw" kind="show" identifier="editPlace" trigger="accessoryAction" id="Hhx-LG-l8t"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -378,6 +378,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZOm-HN-kra"/>
+        <segue reference="Hhx-LG-l8t"/>
     </inferredMetricsTieBreakers>
 </document>

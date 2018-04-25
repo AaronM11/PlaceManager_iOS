@@ -11,6 +11,9 @@ import UIKit
 class PlaceTableViewController: UITableViewController {
     
     var places: [Place] = Places().places
+    var selectedIndexPath: IndexPath?
+    
+    var selectedCells: [IndexPath] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +58,22 @@ class PlaceTableViewController: UITableViewController {
     }
     */
 
-    override func tableView(_ tableView: UITableView,
-                            editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if selectedCells.count >= 2 && !selectedCells.contains(indexPath) {
+            return nil
+        }
+        selectedCells.append(indexPath)
+        return indexPath
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let index = selectedCells.index(of: indexPath) {
+            selectedCells.remove(at: index)
+        }
     }
     
     
@@ -69,6 +85,10 @@ class PlaceTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+//    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+//        accessoryIndexPath = indexPath
+//    }
     
     
     /*
@@ -90,19 +110,34 @@ class PlaceTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    let editPlace = "EditPlace"
+    let editPlace = "editPlace"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == editPlace {
-            guard let indexPath = tableView.indexPathForSelectedRow,
-            let addPlaceTableViewController = segue.destination as? AddPlaceTableViewController else { return }
-        
+            guard let sender = sender as? UITableViewCell,
+                  let indexPath = tableView.indexPath(for: sender),
+                  let addPlaceTableViewController = segue.destination as? AddPlaceTableViewController else { return }
+            selectedIndexPath = indexPath
+            
             let place = places[indexPath.row]
             addPlaceTableViewController.place = place
         }
     }
     
-    @IBAction func unwindToPlaceTableView(segue: UIStoryboardSegue) { // Not UIStoryboard
+    @IBAction func unwindToPlaceTableView(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind",
+            let sourceViewController = segue.source as? AddPlaceTableViewController else { return }
         
+        if let place = sourceViewController.place {
+            if let selectedIndexPath = selectedIndexPath {
+                places[selectedIndexPath.row] = place
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                let newIndexPath = IndexPath(row: places.count, section: 0)
+                places.append(place)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+        selectedIndexPath = nil
     }
     
     
