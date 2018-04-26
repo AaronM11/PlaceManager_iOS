@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PlaceTableViewController: UITableViewController {
     
@@ -63,10 +64,13 @@ class PlaceTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if selectedCells.count >= 2 && !selectedCells.contains(indexPath) {
+        if selectedCells.count == 2 && !selectedCells.contains(indexPath) {
             return nil
         }
         selectedCells.append(indexPath)
+        if selectedCells.count == 2 {
+            calculateSphericalDistance()
+        }
         return indexPath
     }
     
@@ -76,8 +80,6 @@ class PlaceTableViewController: UITableViewController {
         }
     }
     
-    
-
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -86,29 +88,31 @@ class PlaceTableViewController: UITableViewController {
         }
     }
     
-//    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-//        accessoryIndexPath = indexPath
-//    }
-    
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    // MARK: - Private
+    private func calculateSphericalDistance() {
+        let toPlace = places[0]
+        let fromPlace = places[1]
+        
+        let toLocation = CLLocation(latitude: CLLocationDegrees(toPlace.latitude), longitude: CLLocationDegrees(toPlace.longitude))
+        
+        let fromLocation = CLLocation(latitude: CLLocationDegrees(fromPlace.latitude), longitude: fromPlace.longitude)
+        
+        let distance = toLocation.distance(from: fromLocation).magnitude
+        let kilometers = String(format: "%.2f", distance/1000.0) + " kilometers"
+        print(kilometers)
+        
+        let distanceModel = SphericalDistanceModel(toPlace: toPlace.addressTitle, fromPlace: fromPlace.addressTitle, distance: kilometers, heading: "")
+        displaySphericalDistance(with: distanceModel)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    private func displaySphericalDistance(with model: SphericalDistanceModel) {
+        let storyboard = UIStoryboard(name: "SphericalDistance", bundle: nil)
+        guard let sphericalDistanceViewController = storyboard.instantiateInitialViewController() as? SpehericalDistanceTableViewController else { return }
+        sphericalDistanceViewController.model = model
+        present(sphericalDistanceViewController, animated: true, completion: nil)
     }
-    */
-
     
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     let editPlace = "editPlace"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -139,6 +143,5 @@ class PlaceTableViewController: UITableViewController {
         }
         selectedIndexPath = nil
     }
-    
     
 }
