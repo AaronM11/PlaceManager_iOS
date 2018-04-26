@@ -107,9 +107,13 @@ class PlaceTableViewController: UITableViewController {
     
     private func displaySphericalDistance(with model: SphericalDistanceModel) {
         let storyboard = UIStoryboard(name: "SphericalDistance", bundle: nil)
-        guard let sphericalDistanceViewController = storyboard.instantiateInitialViewController() as? SpehericalDistanceTableViewController else { return }
+        guard let sphericalDistanceViewController = storyboard.instantiateViewController(withIdentifier: "SphericalDistanceTableViewController") as? SphericalDistanceTableViewController else { return }
+        
         sphericalDistanceViewController.model = model
-        present(sphericalDistanceViewController, animated: true, completion: nil)
+        if let navigationController = navigationController {
+            navigationController.pushViewController(sphericalDistanceViewController, animated: true)
+        }
+        
     }
     
     // MARK: - Navigation

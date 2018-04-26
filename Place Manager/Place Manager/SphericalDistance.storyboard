@@ -12,7 +12,7 @@
         <!--Spherical Distance-->
         <scene sceneID="9Gv-n3-l98">
             <objects>
-                <tableViewController id="tjr-7Z-noM" customClass="SpehericalDistanceTableViewController" customModule="Place_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SphericalDistanceTableViewController" id="tjr-7Z-noM" customClass="SphericalDistanceTableViewController" customModule="Place_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MsX-xg-yOk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,12 +129,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Spherical Distance" id="eXv-GB-UKy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="lUc-Wt-bdz">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="p3j-GW-Kye">
                             <connections>
-                                <segue destination="5V8-DI-lut" kind="unwind" unwindAction="unwindToPlaceTableViewWithSegue:" id="0Um-v3-1Ax"/>
+                                <segue destination="5V8-DI-lut" kind="unwind" unwindAction="unwindToPlaceTableViewWithSegue:" id="Jx1-Wk-5q1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="distanceTextField" destination="dWm-Tf-sBo" id="8Io-II-uGg"/>
+                        <outlet property="fromPlaceTextField" destination="r98-NL-bFl" id="LGO-3Z-tQJ"/>
+                        <outlet property="headingTextField" destination="DyC-Kd-tEq" id="fkc-Ql-C6p"/>
+                        <outlet property="toPlaceTextField" destination="uZM-5N-Non" id="0vx-aO-IBY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPN-NP-big" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5V8-DI-lut" userLabel="Exit" sceneMemberID="exit"/>

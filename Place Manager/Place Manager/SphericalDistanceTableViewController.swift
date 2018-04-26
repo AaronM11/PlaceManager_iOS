@@ -8,12 +8,26 @@
 
 import UIKit
 
-class SpehericalDistanceTableViewController: UITableViewController {
+class SphericalDistanceTableViewController: UITableViewController {
     
     var model: SphericalDistanceModel?
     
+    // MARK: - Private IBOutlets
+    
+    @IBOutlet weak var toPlaceTextField: UITextField!
+    @IBOutlet weak var fromPlaceTextField: UITextField!
+    @IBOutlet weak var distanceTextField: UITextField!
+    @IBOutlet weak var headingTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let model = model {
+            toPlaceTextField.text = model.toPlace
+            fromPlaceTextField.text = model.fromPlace
+            distanceTextField.text = model.distance
+            headingTextField.text = model.heading
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

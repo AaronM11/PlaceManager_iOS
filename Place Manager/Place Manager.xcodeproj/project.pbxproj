@@ -15,7 +15,7 @@
 		A4445171207DB742009B8E02 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445170207DB742009B8E02 /* Place.swift */; };
 		A4445174207DB9A9009B8E02 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4445173207DB9A9009B8E02 /* libsqlite3.tbd */; };
 		A4445177207DBA62009B8E02 /* PlaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4445175207DBA62009B8E02 /* PlaceModel.xcdatamodeld */; };
-		A49795092091823100A420F7 /* SpehericalDistanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49795072091823100A420F7 /* SpehericalDistanceTableViewController.swift */; };
+		A49795092091823100A420F7 /* SphericalDistanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49795072091823100A420F7 /* SphericalDistanceTableViewController.swift */; };
 		A497950C2091832900A420F7 /* SphericalDistance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A497950B2091832900A420F7 /* SphericalDistance.storyboard */; };
 		A497950E20918AF700A420F7 /* SphericalDistanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A497950D20918AF700A420F7 /* SphericalDistanceModel.swift */; };
 		A4DBC160208BF28200E2FF73 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBC15F208BF28200E2FF73 /* Places.swift */; };
@@ -33,7 +33,7 @@
 		A4445170207DB742009B8E02 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		A4445173207DB9A9009B8E02 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A4445176207DBA62009B8E02 /* PlaceModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaceModel.xcdatamodel; sourceTree = "<group>"; };
-		A49795072091823100A420F7 /* SpehericalDistanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpehericalDistanceTableViewController.swift; sourceTree = "<group>"; };
+		A49795072091823100A420F7 /* SphericalDistanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphericalDistanceTableViewController.swift; sourceTree = "<group>"; };
 		A497950B2091832900A420F7 /* SphericalDistance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SphericalDistance.storyboard; sourceTree = "<group>"; };
 		A497950D20918AF700A420F7 /* SphericalDistanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphericalDistanceModel.swift; sourceTree = "<group>"; };
 		A4DBC15F208BF28200E2FF73 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				A4445162207DB4AD009B8E02 /* Assets.xcassets */,
 				A4445164207DB4AD009B8E02 /* LaunchScreen.storyboard */,
 				A4445167207DB4AD009B8E02 /* Info.plist */,
-				A49795072091823100A420F7 /* SpehericalDistanceTableViewController.swift */,
+				A49795072091823100A420F7 /* SphericalDistanceTableViewController.swift */,
 				A497950B2091832900A420F7 /* SphericalDistance.storyboard */,
 			);
 			path = "Place Manager";
@@ -184,7 +184,7 @@
 				A444516E207DB703009B8E02 /* PlaceTableViewController.swift in Sources */,
 				A4DBC162208C10C200E2FF73 /* AddPlaceTableViewController.swift in Sources */,
 				A497950E20918AF700A420F7 /* SphericalDistanceModel.swift in Sources */,
-				A49795092091823100A420F7 /* SpehericalDistanceTableViewController.swift in Sources */,
+				A49795092091823100A420F7 /* SphericalDistanceTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
