@@ -160,6 +160,13 @@ class PlaceTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToPlaceTableView(segue: UIStoryboardSegue) {
+        if let selectedPaths = tableView.indexPathsForSelectedRows {
+            selectedPaths.forEach({ indexPath in
+                tableView.deselectRow(at: indexPath, animated: true)
+            })
+            selectedCells = [IndexPath]()
+        }
+        
         guard segue.identifier == "saveUnwind",
             let sourceViewController = segue.source as? AddPlaceTableViewController else { return }
         let placeDB = PlaceDB()
