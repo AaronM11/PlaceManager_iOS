@@ -16,7 +16,6 @@ class SphericalDistanceTableViewController: UITableViewController {
     var model: SphericalDistanceModel?
     
     // MARK: - Private IBOutlets
-    
     @IBOutlet weak var toPlaceTextField: UITextField!
     @IBOutlet weak var fromPlaceTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
@@ -34,7 +33,6 @@ class SphericalDistanceTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }

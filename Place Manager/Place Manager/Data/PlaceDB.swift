@@ -75,14 +75,13 @@ public class PlaceDB {
                 return results[0]
             }
         } catch let error as NSError{
-            print("error getting student \(placeName), error \(error)")
+            NSLog("error getting palce \(placeName), error \(error)")
         }
         return nil
     }
     
     @discardableResult
     func deletePlace(name: String) -> Bool {
-        var deleted = false
         let selectRequest:NSFetchRequest<Place> = Place.fetchRequest()
         selectRequest.predicate = NSPredicate(format:"name == %@",name)
         do{
@@ -90,14 +89,13 @@ public class PlaceDB {
             
             if results.count > 0 {
                 managedContext?.delete(results[0] as NSManagedObject)
-//                try mContext?.save()
-                deleted = true
+                return true
             }
         } catch let error as NSError{
             NSLog("error deleting place \(name). Error \(error)")
         }
         
-        return deleted
+        return false
     }
     
     @discardableResult
@@ -111,7 +109,5 @@ public class PlaceDB {
         }
         return saved
     }
-    
-    
-    
+
 }
