@@ -11,7 +11,7 @@ import CoreLocation
 
 class PlaceTableViewController: UITableViewController {
     
-    var places: [Place] = Places().places
+    var places = [PlaceWrapper]()
     var selectedIndexPath: IndexPath?
     
     var selectedCells: [IndexPath] = []
@@ -19,24 +19,16 @@ class PlaceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
-//        navigationItem.rightBarButtonItem = plusBarBu
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        initializeCoreData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        //  only 1 section.
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return places.count
     }
 
@@ -50,14 +42,6 @@ class PlaceTableViewController: UITableViewController {
 
         return cell
     }
- 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .delete
@@ -83,6 +67,11 @@ class PlaceTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let placeDB = PlaceDB()
+            let placeToDelete = places[indexPath.row]
+            placeDB.deletePlace(name: placeToDelete.name)
+            placeDB.saveContext()
+            
             places.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -113,11 +102,50 @@ class PlaceTableViewController: UITableViewController {
         if let navigationController = navigationController {
             navigationController.pushViewController(sphericalDistanceViewController, animated: true)
         }
+    }
+    
+    private func initializeCoreData() {
+        let placeDB = PlaceDB()
+        let placesFromDB = placeDB.getPlaces()
         
+        if let placesFromDB = placesFromDB {
+            for place in placesFromDB {
+                let placeStruct = PlaceWrapper(name: place.name ?? "", description: place.detail ?? "" , category: place.category ?? "" , addressTitle: place.addressTitle ?? "" , addressStreet: place.addressStreet ?? "" , elevation: place.elevation , latitude: place.latitude, longitude: place.longitude)
+                places.append(placeStruct)
+            }
+        }
+        
+        if places.count > 0 {
+            return
+        }
+        
+        if let path = Bundle.main.path(forResource: "places", ofType: "json") {
+            do {
+                let placeData = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                createPlaceModels(with: placeData)
+            } catch let error {
+                print("parse error: \(error.localizedDescription)")
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+    }
+    
+    private func createPlaceModels(with placeData: Data) {
+        let decoder = JSONDecoder()
+        guard let jsonPlaces = try? decoder.decode([PlaceWrapper].self, from: placeData) else { return }
+        places = jsonPlaces
+        let placeDB = PlaceDB()
+        
+        for place in jsonPlaces {
+            placeDB.addPlace(place: place)
+        }
+        
+        placeDB.saveContext()
     }
     
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     let editPlace = "editPlace"
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == editPlace {
@@ -134,9 +162,11 @@ class PlaceTableViewController: UITableViewController {
     @IBAction func unwindToPlaceTableView(segue: UIStoryboardSegue) {
         guard segue.identifier == "saveUnwind",
             let sourceViewController = segue.source as? AddPlaceTableViewController else { return }
-        
+        let placeDB = PlaceDB()
         if let place = sourceViewController.place {
             if let selectedIndexPath = selectedIndexPath {
+                let placeToDelete = places[selectedIndexPath.row]
+                placeDB.deletePlace(name: placeToDelete.name)
                 places[selectedIndexPath.row] = place
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
@@ -144,6 +174,8 @@ class PlaceTableViewController: UITableViewController {
                 places.append(place)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
+            placeDB.addPlace(place: place)
+            placeDB.saveContext()
         }
         selectedIndexPath = nil
     }

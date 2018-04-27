@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Place {
+//Wrapper for a Place object.
+struct PlaceWrapper: Codable {
     
     let name: String
     let description: String
@@ -18,6 +19,17 @@ struct Place {
     let elevation: Double
     let latitude: Double
     let longitude: Double
+    
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case description
+        case category
+        case addressTitle = "address-title"
+        case addressStreet = "address-street"
+        case elevation
+        case latitude
+        case longitude
+    }
 
     init(name: String, description: String, category: String, addressTitle: String, addressStreet: String, elevation: Double, latitude: Double, longitude: Double) {
         self.name = name

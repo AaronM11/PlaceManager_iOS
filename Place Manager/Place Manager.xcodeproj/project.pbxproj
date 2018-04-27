@@ -12,14 +12,17 @@
 		A4445163207DB4AD009B8E02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4445162207DB4AD009B8E02 /* Assets.xcassets */; };
 		A4445166207DB4AD009B8E02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4445164207DB4AD009B8E02 /* LaunchScreen.storyboard */; };
 		A444516E207DB703009B8E02 /* PlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A444516D207DB703009B8E02 /* PlaceTableViewController.swift */; };
-		A4445171207DB742009B8E02 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445170207DB742009B8E02 /* Place.swift */; };
+		A4445171207DB742009B8E02 /* PlaceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4445170207DB742009B8E02 /* PlaceWrapper.swift */; };
 		A4445174207DB9A9009B8E02 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A4445173207DB9A9009B8E02 /* libsqlite3.tbd */; };
 		A4445177207DBA62009B8E02 /* PlaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4445175207DBA62009B8E02 /* PlaceModel.xcdatamodeld */; };
 		A49795092091823100A420F7 /* SphericalDistanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49795072091823100A420F7 /* SphericalDistanceTableViewController.swift */; };
 		A497950C2091832900A420F7 /* SphericalDistance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A497950B2091832900A420F7 /* SphericalDistance.storyboard */; };
 		A497950E20918AF700A420F7 /* SphericalDistanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A497950D20918AF700A420F7 /* SphericalDistanceModel.swift */; };
-		A4DBC160208BF28200E2FF73 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBC15F208BF28200E2FF73 /* Places.swift */; };
 		A4DBC162208C10C200E2FF73 /* AddPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DBC161208C10C200E2FF73 /* AddPlaceTableViewController.swift */; };
+		A4E2C9742092A90700000101 /* PlaceDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C9732092A90700000101 /* PlaceDB.swift */; };
+		A4E2C97A2092B49200000101 /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = A4E2C9792092B49100000101 /* places.json */; };
+		A4E2C97D2092DB9500000101 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C97B2092DB9500000101 /* Place+CoreDataClass.swift */; };
+		A4E2C97E2092DB9500000101 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C97C2092DB9500000101 /* Place+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +33,17 @@
 		A4445165207DB4AD009B8E02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4445167207DB4AD009B8E02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A444516D207DB703009B8E02 /* PlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewController.swift; sourceTree = "<group>"; };
-		A4445170207DB742009B8E02 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		A4445170207DB742009B8E02 /* PlaceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceWrapper.swift; sourceTree = "<group>"; };
 		A4445173207DB9A9009B8E02 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A4445176207DBA62009B8E02 /* PlaceModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaceModel.xcdatamodel; sourceTree = "<group>"; };
 		A49795072091823100A420F7 /* SphericalDistanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphericalDistanceTableViewController.swift; sourceTree = "<group>"; };
 		A497950B2091832900A420F7 /* SphericalDistance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SphericalDistance.storyboard; sourceTree = "<group>"; };
 		A497950D20918AF700A420F7 /* SphericalDistanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SphericalDistanceModel.swift; sourceTree = "<group>"; };
-		A4DBC15F208BF28200E2FF73 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		A4DBC161208C10C200E2FF73 /* AddPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceTableViewController.swift; sourceTree = "<group>"; };
+		A4E2C9732092A90700000101 /* PlaceDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDB.swift; sourceTree = "<group>"; };
+		A4E2C9792092B49100000101 /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
+		A4E2C97B2092DB9500000101 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A4E2C97C2092DB9500000101 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 		A444515A207DB4AD009B8E02 /* Place Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A4E2C9792092B49100000101 /* places.json */,
 				A444516F207DB733009B8E02 /* Data */,
 				A444515B207DB4AD009B8E02 /* AppDelegate.swift */,
 				A444516D207DB703009B8E02 /* PlaceTableViewController.swift */,
@@ -90,9 +97,11 @@
 		A444516F207DB733009B8E02 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A4445170207DB742009B8E02 /* Place.swift */,
-				A4DBC15F208BF28200E2FF73 /* Places.swift */,
+				A4445170207DB742009B8E02 /* PlaceWrapper.swift */,
 				A497950D20918AF700A420F7 /* SphericalDistanceModel.swift */,
+				A4E2C9732092A90700000101 /* PlaceDB.swift */,
+				A4E2C97B2092DB9500000101 /* Place+CoreDataClass.swift */,
+				A4E2C97C2092DB9500000101 /* Place+CoreDataProperties.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -164,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4445166207DB4AD009B8E02 /* LaunchScreen.storyboard in Resources */,
+				A4E2C97A2092B49200000101 /* places.json in Resources */,
 				A497950C2091832900A420F7 /* SphericalDistance.storyboard in Resources */,
 				A4445163207DB4AD009B8E02 /* Assets.xcassets in Resources */,
 				A4445161207DB4AD009B8E02 /* PlaceTableView.storyboard in Resources */,
@@ -177,10 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4DBC160208BF28200E2FF73 /* Places.swift in Sources */,
-				A4445171207DB742009B8E02 /* Place.swift in Sources */,
+				A4E2C9742092A90700000101 /* PlaceDB.swift in Sources */,
+				A4445171207DB742009B8E02 /* PlaceWrapper.swift in Sources */,
 				A4445177207DBA62009B8E02 /* PlaceModel.xcdatamodeld in Sources */,
 				A444515C207DB4AD009B8E02 /* AppDelegate.swift in Sources */,
+				A4E2C97D2092DB9500000101 /* Place+CoreDataClass.swift in Sources */,
+				A4E2C97E2092DB9500000101 /* Place+CoreDataProperties.swift in Sources */,
 				A444516E207DB703009B8E02 /* PlaceTableViewController.swift in Sources */,
 				A4DBC162208C10C200E2FF73 /* AddPlaceTableViewController.swift in Sources */,
 				A497950E20918AF700A420F7 /* SphericalDistanceModel.swift in Sources */,
