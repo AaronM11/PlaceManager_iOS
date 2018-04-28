@@ -5,8 +5,9 @@
 //  Created by Aaron Musengo on 4/10/18.
 //  Email: amuseng1@asu.edu
 //  Copyright © 2018 Aaron Musengo. All rights reserved.
-//  This software is provided to Arizona State University for the purpose
-//  of grading and evaluation. This software is provided AS IS.
+//  This software is provided to Arizona State University for the instuctor
+//  and the University to build and evaluate the software package for the
+//  purpose of determining your grade and program assessment.
 //
 
 import UIKit

@@ -23,6 +23,7 @@
 		A4E2C97A2092B49200000101 /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = A4E2C9792092B49100000101 /* places.json */; };
 		A4E2C97D2092DB9500000101 /* Place+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C97B2092DB9500000101 /* Place+CoreDataClass.swift */; };
 		A4E2C97E2092DB9500000101 /* Place+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E2C97C2092DB9500000101 /* Place+CoreDataProperties.swift */; };
+		A4E7B1E4209427D4000FF03D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A4E7B1E3209427D4000FF03D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A4E2C9792092B49100000101 /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
 		A4E2C97B2092DB9500000101 /* Place+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A4E2C97C2092DB9500000101 /* Place+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Place+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A4E7B1E3209427D4000FF03D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		A444514F207DB4AD009B8E02 = {
 			isa = PBXGroup;
 			children = (
+				A4E7B1E3209427D4000FF03D /* README.md */,
 				A444515A207DB4AD009B8E02 /* Place Manager */,
 				A4445159207DB4AD009B8E02 /* Products */,
 				A4445175207DBA62009B8E02 /* PlaceModel.xcdatamodeld */,
@@ -172,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4E7B1E4209427D4000FF03D /* README.md in Resources */,
 				A4445166207DB4AD009B8E02 /* LaunchScreen.storyboard in Resources */,
 				A4E2C97A2092B49200000101 /* places.json in Resources */,
 				A497950C2091832900A420F7 /* SphericalDistance.storyboard in Resources */,

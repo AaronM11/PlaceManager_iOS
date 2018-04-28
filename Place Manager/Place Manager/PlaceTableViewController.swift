@@ -56,6 +56,7 @@ class PlaceTableViewController: UITableViewController {
         }
         selectedCells.append(indexPath)
         if selectedCells.count == 2 {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
             calculateSphericalDistance()
         }
         return indexPath
@@ -82,20 +83,53 @@ class PlaceTableViewController: UITableViewController {
     
     // MARK: - Private
     private func calculateSphericalDistance() {
-        let toPlace = places[0]
-        let fromPlace = places[1]
         
+        
+        guard let selectedPaths = tableView.indexPathsForSelectedRows else { return }
+        
+        let toPlace = places[selectedPaths[0].row]
+        let fromPlace = places[selectedPaths[1].row]
+
+
         let toLocation = CLLocation(latitude: CLLocationDegrees(toPlace.latitude), longitude: CLLocationDegrees(toPlace.longitude))
         
         let fromLocation = CLLocation(latitude: CLLocationDegrees(fromPlace.latitude), longitude: fromPlace.longitude)
         
         let distance = toLocation.distance(from: fromLocation).magnitude
         let kilometers = String(format: "%.2f", distance/1000.0) + " kilometers"
-        print(kilometers)
+        let heading = calculateBearing(with: toLocation, and: fromLocation)
+        let formattedHeading = String(format: "%.4f", heading) + " degrees"
         
-        let distanceModel = SphericalDistanceModel(toPlace: toPlace.addressTitle, fromPlace: fromPlace.addressTitle, distance: kilometers, heading: "")
+        let distanceModel = SphericalDistanceModel(toPlace: toPlace.addressTitle, fromPlace: fromPlace.addressTitle, distance: kilometers, heading: formattedHeading)
         displaySphericalDistance(with: distanceModel)
     }
+    
+    // The calculateBearing(with toPoint: CLLocation, and fromPoint: CLLocation),  degreesToRadians(degrees: Double) -> Double, and radiansToDegrees(radians: Double) -> Double were discovered on StackOverflow from the following link:
+    // https://stackoverflow.com/questions/26998029/calculating-bearing-between-two-cllocation-points-in-swift
+    // The funcions were modified to match the style of my code and to be more readable.
+    // The algorithm is true to the stack overflow implementation which is why I included a reference to that code here.
+    private func calculateBearing(with toPoint: CLLocation, and fromPoint: CLLocation) -> Double {
+        let toLatitudeInRadians = degreesToRadians(degrees: toPoint.coordinate.latitude)
+        let toLongitudeInRadians = degreesToRadians(degrees: toPoint.coordinate.longitude)
+        
+        let fromLatitudeInRadians = degreesToRadians(degrees: fromPoint.coordinate.latitude)
+        let fromLongitudeInRadians = degreesToRadians(degrees: fromPoint.coordinate.longitude)
+        let dLongitude = fromLongitudeInRadians - toLongitudeInRadians
+        
+        let x = sin(dLongitude) * cos(fromLatitudeInRadians)
+        let y = cos(toLongitudeInRadians) * sin(fromLatitudeInRadians) - sin(toLatitudeInRadians) * cos(fromLatitudeInRadians) * cos(dLongitude)
+        
+        let bearingInRadians = atan2(y, x)
+        let bearingInDegrees = radiansToDegrees(radians: bearingInRadians)
+        
+        return bearingInDegrees
+        
+    }
+    
+    //See above:
+    //https://stackoverflow.com/questions/26998029/calculating-bearing-between-two-cllocation-points-in-swift
+    private func degreesToRadians(degrees: Double) -> Double { return degrees * .pi / 180.0 }
+    private func radiansToDegrees(radians: Double) -> Double { return radians * 180.0 / .pi }
     
     private func displaySphericalDistance(with model: SphericalDistanceModel) {
         let storyboard = UIStoryboard(name: "SphericalDistance", bundle: nil)
@@ -168,6 +202,7 @@ class PlaceTableViewController: UITableViewController {
                 tableView.deselectRow(at: indexPath, animated: true)
             })
             selectedCells = [IndexPath]()
+            print("Selected Cells: \(selectedCells)")
         }
         
         guard segue.identifier == "saveUnwind",
