@@ -84,12 +84,10 @@ class PlaceTableViewController: UITableViewController {
     // MARK: - Private
     private func calculateSphericalDistance() {
         
-        
         guard let selectedPaths = tableView.indexPathsForSelectedRows else { return }
         
         let toPlace = places[selectedPaths[0].row]
         let fromPlace = places[selectedPaths[1].row]
-
 
         let toLocation = CLLocation(latitude: CLLocationDegrees(toPlace.latitude), longitude: CLLocationDegrees(toPlace.longitude))
         
@@ -123,7 +121,6 @@ class PlaceTableViewController: UITableViewController {
         let bearingInDegrees = radiansToDegrees(radians: bearingInRadians)
         
         return bearingInDegrees
-        
     }
     
     //See above:
